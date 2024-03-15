@@ -55,17 +55,6 @@ function ModeButton(){
 }
 
 function LanguageButton({setLanguage}){
-    useEffect(() => {
-        let storedLanguage = localStorage.getItem("lang");
-        if(storedLanguage){
-            setLanguage(storedLanguage);
-        }else{ 
-            let navigatorLanguage = (navigator.language == "es") ? "es" : "en"
-            setLanguage(navigatorLanguage);
-            localStorage.setItem("lang", navigatorLanguage);
-        }
-    }, [])
-
     function changeLanguage(){
         let newLanguage = (localStorage.getItem("lang") == "en") ? "es" : "en";
         setLanguage(newLanguage);

@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "./components/header"
 import Aside from "./components/aside";
 import Viewer from "./components/viewer";
+import useLanguage from "./utils/useLanguage";
 
 function App() {
   
-  const [language, setLanguage] = useState(null);
+  const {text, setLanguage} = useLanguage();
   
   return(
     <>
       <Header setLanguage={setLanguage}></Header>
       <main className="tablet:flex min-h-full">
-        <Aside></Aside>
+        <Aside text={text}></Aside>
         <Viewer></Viewer>
       </main>
     </>
