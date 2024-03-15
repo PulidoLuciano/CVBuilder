@@ -1,4 +1,5 @@
 import { useState } from "react"
+import designs from "../utils/designs";
 
 export default function Aside({text}){
     
@@ -16,6 +17,16 @@ export default function Aside({text}){
                 ?
                 <section className="p-3">
                     <h2>{text.designs}</h2>
+                    <div className="grid grid-cols-3 gap-3">
+                        {
+                            designs.map((design) => 
+                                <button className="flex items-center justify-center bg-gray-400 dark:bg-gray-800 p-3 w-full">
+                                    {design.preview}
+                                </button>
+                            )
+                        }
+                    </div>
+                    
                 </section>
                 :
                 <section className="p-3">
