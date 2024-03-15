@@ -20,3 +20,9 @@
         @apply bg-slate-700 dark:bg-slate-900 rounded-md
     }
 }
+
+@layer components{
+    .navButton{
+        @apply py-1 px-2 font-bold rounded-lg border border-slate-500
+    }
+}
