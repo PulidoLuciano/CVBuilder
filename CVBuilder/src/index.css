@@ -4,7 +4,19 @@
 
 @layer base{
     #root{
-        @apply grid min-h-screen dark:bg-gray-700;
+        @apply grid h-screen overflow-hidden dark:bg-gray-700;
         grid-template-rows: 48px auto;
+    }
+
+    ::-webkit-scrollbar{
+        @apply w-3
+    }
+
+    ::-webkit-scrollbar-track{
+        @apply bg-slate-700 rounded-md
+    }
+
+    ::-webkit-scrollbar-thumb{
+        @apply bg-slate-900 rounded-md
     }
 }

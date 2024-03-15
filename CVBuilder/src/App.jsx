@@ -9,11 +9,11 @@ function App() {
     <>
       <Header setLanguage={setLanguage}></Header>
       <main className="tablet:flex min-h-full">
-        <aside className="tablet:w-1/3">
+        <aside className="overflow-auto tablet:w-1/3 dark:text-white">
           <button>Designs</button>
           <button>Information</button>
         </aside>
-        <section className="bg-gray-800 grid grid-c tablet:w-2/3">
+        <section className="bg-gray-800 grid grid-c tablet:w-2/3 overflow-auto">
           <article className="bg-white aspect-a4 mx-auto my-8 w-2/3">
             
           </article>
