@@ -14,15 +14,14 @@ export default function Aside(){
             {
                 (sectionShown == "designs")
                 ?
-                <section>
+                <section className="p-3">
                     <h2>Designs</h2>
                 </section>
                 :
-                <section>
+                <section className="p-3">
                     <h2>Information</h2>
                 </section>
             }
-            
         </aside>
     )
 }
