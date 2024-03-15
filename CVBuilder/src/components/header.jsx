@@ -5,15 +5,15 @@ import britain from "../assets/britain.svg"
 import spain from "../assets/spain.svg"
 import { useEffect, useState } from "react"
 
-export default function Header(){
+export default function Header({setLanguage}){
     return(
-        <header className="w-full bg-gray-200 dark:bg-gray-900 dark:text-white h-12 px-6 select-none flex justify-between items-center shadow-xl">
+        <header className="bg-gray-200 dark:bg-gray-900 dark:text-white mobile-m:px-6 select-none flex justify-between items-center shadow-xl">
             <span className="flex gap-1 text-2xl">
                 <img src={sheetImage} alt="Web icon" className="size-8 dark:invert"/>
                 <h1 className="cursor-default">CVBuilder</h1>
             </span>
             <span className="flex items-center gap-3">
-                <LanguageButton></LanguageButton>
+                <LanguageButton setLanguage={setLanguage}></LanguageButton>
                 <ModeButton></ModeButton>
             </span>
         </header>
@@ -50,13 +50,11 @@ function ModeButton(){
     }
 
     return(
-        <button className="pr-3" onClick={changeMode}><img src={(mode == "light") ? lightMode : darkMode} alt={(mode == "light") ? "Light mode icon" : "Dark mode icon"} className="size-8 dark:invert" /></button>
+        <button onClick={changeMode}><img src={(mode == "light") ? lightMode : darkMode} alt={(mode == "light") ? "Light mode icon" : "Dark mode icon"} className="size-8 dark:invert" /></button>
     )
 }
 
-function LanguageButton(){
-    const [language, setLanguage] = useState(localStorage.getItem("lang"));
-
+function LanguageButton({setLanguage}){
     useEffect(() => {
         let storedLanguage = localStorage.getItem("lang");
         if(storedLanguage){
@@ -69,12 +67,12 @@ function LanguageButton(){
     }, [])
 
     function changeLanguage(){
-        let newLanguage = (language == "en") ? "es" : "en";
+        let newLanguage = (localStorage.getItem("lang") == "en") ? "es" : "en";
         setLanguage(newLanguage);
         localStorage.setItem("lang", newLanguage);
     }
 
     return(
-        <button className="rounded-sm" onClick={changeLanguage}><img src={(language == "en") ? britain : spain} alt={((language == "en") ? "United Kingdom" : "Spain") + " flag"} className="size-8" /></button>
+        <button className="rounded-sm pr-3" onClick={changeLanguage}><img src={(localStorage.getItem("lang") == "en") ? britain : spain} alt={((localStorage.getItem("lang") == "en") ? "United Kingdom" : "Spain") + " flag"} className="size-8" /></button>
     )
 }
