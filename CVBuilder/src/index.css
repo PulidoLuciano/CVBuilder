@@ -19,6 +19,10 @@
     ::-webkit-scrollbar-thumb{
         @apply bg-slate-700 dark:bg-slate-900 rounded-md
     }
+
+    h2{
+        @apply text-4xl font-bold pb-3
+    }
 }
 
 @layer components{
