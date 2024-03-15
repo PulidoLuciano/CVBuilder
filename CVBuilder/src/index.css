@@ -29,4 +29,8 @@
     .navButton{
         @apply py-1 px-2 font-bold rounded-lg border border-slate-500
     }
+
+    .design-preview{
+        @apply aspect-a4 w-full
+    }
 }
