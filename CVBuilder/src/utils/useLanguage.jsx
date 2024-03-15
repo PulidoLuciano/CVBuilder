@@ -5,7 +5,7 @@ import english from "./english";
 export default function useLanguage(){
 
     const [language, setLanguage] = useState(null);
-    const [text, setText] = useState(null);
+    const [text, setText] = useState(english);
 
     useEffect(() => {
         let storedLanguage = localStorage.getItem("lang");
