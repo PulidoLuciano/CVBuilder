@@ -23,22 +23,31 @@ export default
     },
     {
         id: 4,
-        preview: <div className="design-preview bg-white"></div>,
+        preview: 
+            <div className="design-preview bg-white relative">
+                <div className="bg-default-primary w-2/6 h-full"></div>
+                <div className="bg-default-secondary h-2 absolute top-6 w-full"></div>
+            </div>,
     },
     {
         id: 5,
-        preview: <div className="design-preview bg-white"></div>,
+        preview: 
+            <div className="design-preview bg-white relative flex justify-center">
+                <div className="bg-default-primary h-2 absolute top-6 w-11/12"></div>
+                <div className="bg-default-primary h-2 absolute top-14 w-11/12"></div>
+                <div className="bg-default-primary h-2 absolute top-20 w-11/12"></div>
+            </div>,
     },
     {
         id: 6,
-        preview: <div className="design-preview bg-white"></div>,
+        preview: 
+            <div className="design-preview bg-white relative">
+                <div className="bg-default-primary h-2 absolute top-2 w-full"></div>
+                <div className="bg-default-primary h-2 absolute bottom-0 w-full"></div>
+            </div>,
     },
     {
         id: 7,
-        preview: <div className="design-preview bg-white"></div>,
-    },
-    {
-        id: 8,
         preview: <div className="design-preview bg-white"></div>,
     }
 ]
