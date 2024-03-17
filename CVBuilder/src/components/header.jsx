@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 
 export default function Header({setLanguage}){
     return(
-        <header className="bg-gray-200 dark:bg-gray-900 dark:text-white mobile-m:px-6 select-none flex justify-between items-center shadow-xl">
+        <header className="bg-gray-200 dark:bg-gray-900 dark:text-white mobile-m:px-6 select-none flex justify-between items-center shadow-xl print:hidden">
             <span className="flex gap-1 text-2xl">
                 <img src={sheetImage} alt="Web icon" className="size-8 dark:invert"/>
                 <h1 className="cursor-default">CVBuilder</h1>
