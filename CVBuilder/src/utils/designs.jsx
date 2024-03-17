@@ -48,6 +48,10 @@ export default
     },
     {
         id: 7,
-        preview: <div className="design-preview bg-white"></div>,
+        preview: 
+            <div className="design-preview bg-white flex relative">
+                <div className="bg-default-primary w-2/6 h-5"></div>
+                <div className="bg-default-primary w-2/3 h-5 absolute right-0 bottom-0"></div>
+            </div>,
     }
 ]
