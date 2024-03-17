@@ -11,7 +11,8 @@ module.exports = {
       "default-secondary": "rgb(238,231,225)",
       slate: colors.slate,
       gray: colors.gray,
-      white: colors.white
+      white: colors.white,
+      black: colors.black
     },
     extend: {
       aspectRatio:{
