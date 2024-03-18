@@ -20,7 +20,7 @@ export default function Aside({text}){
                     <div className="grid grid-cols-3 gap-3">
                         {
                             designs.map((design) => 
-                                <button className="flex items-center justify-center bg-gray-400 dark:bg-gray-800 p-3 w-full">
+                                <button key={design.id} className="flex items-center justify-center bg-gray-400 dark:bg-gray-800 p-3 w-full">
                                     {design.preview}
                                 </button>
                             )
