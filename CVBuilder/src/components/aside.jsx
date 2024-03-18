@@ -1,10 +1,18 @@
 import { useState } from "react"
 import designs from "../utils/designs";
 
-export default function Aside({text}){
+export default function Aside({text, setDesign}){
     
     const [sectionShown, setSectionShown] = useState("designs");
-    
+
+    function changeDesign(event){
+        let button = event.target;
+        while(button.tagName != "BUTTON"){
+            button = button.parentElement;
+        }
+        setDesign(designs[parseInt(button.id) - 1]);
+    }
+
     return(
         <aside className="overflow-auto tablet:w-1/3 dark:text-white print:hidden">
             <nav className="p-3">
@@ -20,7 +28,7 @@ export default function Aside({text}){
                     <div className="grid grid-cols-3 gap-3">
                         {
                             designs.map((design) => 
-                                <button key={design.id} className="flex items-center justify-center bg-gray-400 dark:bg-gray-800 p-3 w-full">
+                                <button key={design.id} id={design.id} onClick={changeDesign} className="flex items-center justify-center bg-gray-400 dark:bg-gray-800 p-3 w-full">
                                     {design.preview}
                                 </button>
                             )
