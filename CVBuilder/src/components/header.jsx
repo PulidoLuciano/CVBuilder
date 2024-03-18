@@ -14,7 +14,7 @@ export default function Header({setLanguage, text}){
             </span>
             <span className="flex gap-2">
                 <p>{text.madeBy}</p>
-                <a href="https://github.com/PulidoLuciano" className="underline" no-referer target="_blank">Luciano Pulido</a>
+                <a href="https://github.com/PulidoLuciano" className="underline" no-referer="true" target="_blank">Luciano Pulido</a>
             </span>
             <span className="flex items-center gap-3">
                 <LanguageButton setLanguage={setLanguage}></LanguageButton>
