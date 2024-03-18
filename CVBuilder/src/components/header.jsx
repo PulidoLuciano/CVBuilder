@@ -12,7 +12,7 @@ export default function Header({setLanguage, text}){
                 <img src={sheetImage} alt="Web icon" className="size-8 dark:invert"/>
                 <h1 className="cursor-default">CVBuilder</h1>
             </span>
-            <span className="flex gap-2">
+            <span className="hidden tablet:flex gap-2">
                 <p>{text.madeBy}</p>
                 <a href="https://github.com/PulidoLuciano" className="underline" no-referer="true" target="_blank">Luciano Pulido</a>
             </span>
