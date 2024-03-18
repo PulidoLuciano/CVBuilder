@@ -25,8 +25,9 @@ module.exports = {
       "mobile-l": "425px",
       "tablet": "768px",
       "laptop": "1024px",
+      "laptop-l": "1440px",
       "desktop": "1920px"
-    }
+    },
   },
   plugins: [],
 }
