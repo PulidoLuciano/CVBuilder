@@ -1,5 +1,6 @@
 export default 
 {
     "designs": "Diseños",
-    "information": "Información" 
+    "information": "Información",
+    "madeBy": "Hecho con ❤️ por"
 }

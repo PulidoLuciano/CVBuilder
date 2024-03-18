@@ -5,12 +5,16 @@ import britain from "../assets/britain.svg"
 import spain from "../assets/spain.svg"
 import { useEffect, useState } from "react"
 
-export default function Header({setLanguage}){
+export default function Header({setLanguage, text}){
     return(
         <header className="bg-gray-200 dark:bg-gray-900 dark:text-white mobile-m:px-6 select-none flex justify-between items-center shadow-xl print:hidden">
             <span className="flex gap-1 text-2xl">
                 <img src={sheetImage} alt="Web icon" className="size-8 dark:invert"/>
                 <h1 className="cursor-default">CVBuilder</h1>
+            </span>
+            <span className="flex gap-2">
+                <p>{text.madeBy}</p>
+                <a href="https://github.com/PulidoLuciano" className="underline" no-referer target="_blank">Luciano Pulido</a>
             </span>
             <span className="flex items-center gap-3">
                 <LanguageButton setLanguage={setLanguage}></LanguageButton>

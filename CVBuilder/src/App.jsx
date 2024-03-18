@@ -10,7 +10,7 @@ function App() {
   
   return(
     <>
-      <Header setLanguage={setLanguage}></Header>
+      <Header setLanguage={setLanguage} text={text}></Header>
       <main className="tablet:flex min-h-full">
         <Aside text={text}></Aside>
         <Viewer></Viewer>
