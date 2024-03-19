@@ -225,22 +225,6 @@ export default
     {
         id: 5,
         preview: 
-            <div className="design-preview bg-white relative flex justify-center">
-                <div className="bg-default-primary h-2 absolute top-6 w-11/12"></div>
-                <div className="bg-default-primary h-2 absolute top-14 w-11/12"></div>
-                <div className="bg-default-primary h-2 absolute top-20 w-11/12"></div>
-            </div>,
-        content(information){
-            return(
-                <div>
-                    
-                </div>
-            )
-        }
-    },
-    {
-        id: 6,
-        preview: 
             <div className="design-preview bg-white relative">
                 <div className="bg-default-primary h-2 absolute top-2 w-full"></div>
                 <div className="bg-default-primary h-2 absolute bottom-0 w-full"></div>
@@ -254,7 +238,7 @@ export default
         }
     },
     {
-        id: 7,
+        id: 6,
         preview: 
             <div className="design-preview bg-white flex relative">
                 <div className="bg-default-primary w-2/6 h-5"></div>
@@ -262,8 +246,100 @@ export default
             </div>,
         content(information){
             return(
-                <div>
-                    
+                <div className="flex w-full h-full">
+                    <aside className="w-1/3 h-full">
+                        <div className="bg-default-primary h-16 print-bg"></div>
+                        <div className="p-8">
+                            <section className="flex justify-between w-full items-center">
+                                <div>
+                                    <h1 className="text-3xl font-extrabold">{information.personalInfo.name.toUpperCase()}</h1>
+                                    <h1 className="text-3xl font-extrabold">{information.personalInfo.surname.toUpperCase()}</h1>
+                                    <h2 className="text-base">{information.personalInfo.position.toUpperCase()}</h2>
+                                </div>
+                            </section>
+                            <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-48 mx-auto"/>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">CONTACT</h1>
+                                <h2 className="font-bold text-base p-0 mt-1">E-mail:</h2>
+                                <p className="text-sm">{information.personalInfo.email}</p>
+                                <h2 className="font-bold text-base p-0 mt-1">Address:</h2>
+                                <p className="text-sm">{information.personalInfo.city}</p>
+                                <h2 className="font-bold text-base p-0 mt-1">Phone:</h2>
+                                <p className="text-sm">{information.personalInfo.phone}</p>
+                                {
+                                    information.personalInfo.social.map((item) => 
+                                        <>
+                                            <h2 className="font-bold text-base p-0 mt-1">{item.page}:</h2>
+                                            <p className="text-sm">{item.url}</p>
+                                        </>
+                                    )
+                                }
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                {
+                                    information.languages.map((item) => 
+                                        <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                    )
+                                }
+                            </section>
+                        </div>
+                    </aside>
+                    <main className="p-8 pt-20 w-2/3 text-default-primary relative">
+                        <section className="mb-3">
+                            <h2 className="text-xl">ABOUT ME</h2>
+                            <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
+                        </section>
+                        <hr className="mb-3"/>
+                        <section>
+                            <h2 className="text-xl">WORK EXPERIENCE</h2>
+                            {
+                                information.experience.map(
+                                    (item) => 
+                                    <div className="flex mb-1">
+                                        <div className="w-1/3">
+                                            <p className="font-bold">{item.initialDate} -</p>
+                                            <p className="font-bold">{item.finalDate}</p>
+                                        </div>
+                                        <div className="w-3/4">
+                                            <p className="font-bold">{item.position}</p>
+                                            <p>{item.company}</p>
+                                            <p className="text-sm">{item.summary}</p>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </section>
+                        <hr className="my-3"/>
+                        <section>
+                            <h2 className="text-xl">SKILLS</h2>
+                            <ul className="grid grid-flow-row grid-cols-3 pl-3">
+                                {
+                                    information.skills.map(
+                                        (item) => 
+                                        <li className="list-item list-disc">{item}</li>
+                                    )
+                                }
+                            </ul>
+                        </section>
+                        <hr className="my-3"/>
+                        <section>
+                            <h2 className="text-xl">EDUCATION</h2>
+                            {
+                                information.education.map(
+                                    (item) => 
+                                    <div className="flex mb-1">
+                                        <p className="w-1/3 font-bold">{item.initialYear}-{item.finalYear}</p>
+                                        <div className="w-3/4">
+                                            <p className="font-bold">{item.degree}</p>
+                                            <p>{item.institution}</p>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </section>
+                        <div className="bg-default-primary absolute bottom-0 w-full h-16 print-bg"></div>
+                    </main>
                 </div>
             )
         }
