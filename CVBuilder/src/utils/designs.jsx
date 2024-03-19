@@ -306,8 +306,100 @@ export default
             </div>,
         content(information){
             return(
-                <div>
-                    
+                <div className="w-full h-full grid grid-rows-[168px,60px,auto]">
+                    <header className="flex items-center">
+                        <div className="w-1/3 px-8 bg-default-primary print-bg">
+                            <div className="size-32 mx-auto my-5 p-3 border-2 border-white">
+                                <img src={information.personalInfo.photo} alt="Your photo"/>                                
+                            </div>
+                        </div>
+                        <div className="w-2/3 px-8">
+                            <h1 className="text-5xl font-bold">{information.personalInfo.name.toUpperCase()} {information.personalInfo.surname.toUpperCase()}</h1>
+                            <h2 className="text-2xl font-light">{information.personalInfo.position.toUpperCase()}</h2>
+                        </div>
+                    </header>
+                    <div>
+                        <section className="bg-default-secondary flex h-full items-center px-20 justify-between print-bg">
+                            <p className="flex gap-1 mb-1 text-sm"><img src={EmailIcon} alt="E-mail icon" className="size-4"/> {information.personalInfo.email}</p>
+                            <p className="flex gap-1 mb-1 text-sm"><img src={LocationIcon} alt="Location icon" className="size-4"/> {information.personalInfo.city}</p>
+                            <p className="flex gap-1 mb-1 text-sm"><img src={PhoneIcon} alt="Phone icon" className="size-4"/>{information.personalInfo.phone}</p>
+                        </section>
+                    </div>
+                    <div className="flex">
+                        <aside className="w-1/3 bg-default-primary text-white p-8 print-bg">                            
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">SOCIAL LINKS</h1>
+                                {
+                                    information.personalInfo.social.map((item) => 
+                                        <>
+                                            <h2 className="font-bold text-base p-0 mt-1">{item.page}:</h2>
+                                            <p className="text-sm">{item.url}</p>
+                                        </>
+                                    )
+                                }
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">SKILLS</h1>
+                                <ul>
+                                    {
+                                        information.skills.map(
+                                            (item) => 
+                                            <li className="text-sm">{item}</li>
+                                        )
+                                    }
+                                </ul>
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                {
+                                    information.languages.map((item) => 
+                                        <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                    )
+                                }
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">EDUCATION</h1>
+                                {
+                                    information.education.map(
+                                        (item) => 
+                                        <div className="mb-1">
+                                            <p>{item.initialYear}-{item.finalYear}</p>
+                                            <div>
+                                                <p className="font-bold">{item.degree.toUpperCase()}</p>
+                                                <p>{item.institution}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </section>
+                        </aside>
+                        <main className="p-8 w-2/3 text-default-primary">
+                            <section>
+                                <h2 className="text-xl">ABOUT ME</h2>
+                                <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
+                            </section>
+                            <hr className="my-3"/>
+                            <section>
+                                <h2 className="text-xl">WORK EXPERIENCE</h2>
+                                {
+                                    information.experience.map(
+                                        (item) => 
+                                        <div className="flex mb-1">
+                                            <div className="w-1/3">
+                                                <p className="font-bold">{item.initialDate} -</p>
+                                                <p className="font-bold">{item.finalDate}</p>
+                                            </div>
+                                            <div className="w-3/4">
+                                                <p className="font-bold">{item.position}</p>
+                                                <p>{item.company}</p>
+                                                <p className="text-sm">{item.summary}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </section>
+                        </main>
+                    </div>
                 </div>
             )
         }
