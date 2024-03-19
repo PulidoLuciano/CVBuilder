@@ -201,8 +201,98 @@ export default
             </div>,
         content(information){
             return(
-                <div>
-                    
+                <div className="w-full h-full grid grid-rows-[168px,auto]">
+                    <header className="flex bg-default-primary print-bg text-white items-center">
+                        <div className="w-1/3 px-8">
+                            <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-32 mx-auto my-5"/>
+                        </div>
+                        <div className="w-2/3 px-8">
+                            <h1 className="text-4xl font-bold">{information.personalInfo.name} {information.personalInfo.surname}</h1>
+                            <h2 className="text-base font-light">{information.personalInfo.position}</h2>
+                        </div>
+                    </header>
+                    <div className="flex">
+                        <aside className="w-1/3 bg-default-secondary p-8 print-bg">
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold p-1">CONTACT</h1>
+                                <p className="flex gap-1 mb-1 text-sm"><img src={EmailIcon} alt="E-mail icon" className="size-4"/> {information.personalInfo.email}</p>
+                                <p className="flex gap-1 mb-1 text-sm"><img src={LocationIcon} alt="Location icon" className="size-4"/> {information.personalInfo.city}</p>
+                                <p className="flex gap-1 mb-1 text-sm"><img src={PhoneIcon} alt="Phone icon" className="size-4"/>{information.personalInfo.phone}</p>
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">SOCIAL LINKS</h1>
+                                {
+                                    information.personalInfo.social.map((item) => 
+                                        <>
+                                            <h2 className="font-bold text-base p-0 mt-1">{item.page}:</h2>
+                                            <p className="text-sm">{item.url}</p>
+                                        </>
+                                    )
+                                }
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">SKILLS</h1>
+                                <ul>
+                                    {
+                                        information.skills.map(
+                                            (item) => 
+                                            <li className="text-sm">{item}</li>
+                                        )
+                                    }
+                                </ul>
+                            </section>
+                            <section className="mt-3">
+                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                {
+                                    information.languages.map((item) => 
+                                        <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                    )
+                                }
+                            </section>
+                        </aside>
+                        <main className="p-8 w-2/3 text-default-primary">
+                            <section>
+                                <h2 className="text-xl">ABOUT ME</h2>
+                                <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
+                            </section>
+                            <hr className="my-3"/>
+                            <section>
+                                <h2 className="text-xl">WORK EXPERIENCE</h2>
+                                {
+                                    information.experience.map(
+                                        (item) => 
+                                        <div className="flex mb-1">
+                                            <div className="w-1/3">
+                                                <p className="font-bold">{item.initialDate} -</p>
+                                                <p className="font-bold">{item.finalDate}</p>
+                                            </div>
+                                            <div className="w-3/4">
+                                                <p className="font-bold">{item.position}</p>
+                                                <p>{item.company}</p>
+                                                <p className="text-sm">{item.summary}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </section>
+                            <hr className="my-3"/>
+                            <section>
+                                <h2 className="text-xl">EDUCATION</h2>
+                                {
+                                    information.education.map(
+                                        (item) => 
+                                        <div className="flex mb-1">
+                                            <p className="w-1/3 font-bold">{item.initialYear}-{item.finalYear}</p>
+                                            <div className="w-3/4">
+                                                <p className="font-bold">{item.degree}</p>
+                                                <p>{item.institution}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </section>
+                        </main>
+                    </div>
                 </div>
             )
         }
