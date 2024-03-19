@@ -225,21 +225,6 @@ export default
     {
         id: 5,
         preview: 
-            <div className="design-preview bg-white relative">
-                <div className="bg-default-primary h-2 absolute top-2 w-full"></div>
-                <div className="bg-default-primary h-2 absolute bottom-0 w-full"></div>
-            </div>,
-        content(information){
-            return(
-                <div>
-                    
-                </div>
-            )
-        }
-    },
-    {
-        id: 6,
-        preview: 
             <div className="design-preview bg-white flex relative">
                 <div className="bg-default-primary w-2/6 h-5"></div>
                 <div className="bg-default-primary w-2/3 h-5 absolute right-0 bottom-0"></div>
