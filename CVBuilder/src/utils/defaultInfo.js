@@ -2,7 +2,8 @@ export default
 {
     personalInfo: {
         photo: "./john.jpg",
-        name: "John Doe",
+        name: "John",
+        surname: "Doe",
         position: "System Engineer",
         city: "New York, United States",
         phone: "267-861-5317",
