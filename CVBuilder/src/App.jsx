@@ -17,7 +17,7 @@ function App() {
       <Header setLanguage={setLanguage} text={text}></Header>
       <main className="tablet:flex min-h-full">
         <Aside text={text} selectedDesign={design} setDesign={setDesign}></Aside>
-        <Viewer information={information} design={design}></Viewer>
+        <Viewer information={information} design={design} text={text}></Viewer>
       </main>
     </>
   )

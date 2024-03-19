@@ -7,7 +7,7 @@ export default
     {
         id: 1,
         preview: <div className="design-preview bg-white"></div>,
-        content(information){
+        content(information, text){
             return(
                 <div className="p-8">
                     <div className="flex items-center gap-3">
@@ -18,9 +18,9 @@ export default
                         </div>
                     </div>
                     <div className="grid grid-cols-2 mt-2">
-                        <p><span className="font-bold">City:</span> {information.personalInfo.city}</p>
-                        <p><span className="font-bold">Phone:</span> {information.personalInfo.phone}</p>
-                        <p><span className="font-bold">E-mail:</span> {information.personalInfo.email}</p>
+                        <p><span className="font-bold">{text.city}:</span> {information.personalInfo.city}</p>
+                        <p><span className="font-bold">{text.phone}:</span> {information.personalInfo.phone}</p>
+                        <p><span className="font-bold">{text.email}:</span> {information.personalInfo.email}</p>
                         {
                             information.personalInfo.social.map((social) => <p><span className="font-bold">{social.page}:</span> {social.url}</p>)
                         }
@@ -29,7 +29,7 @@ export default
                         {information.personalInfo.summary}
                     </p>
                     <div className="mt-2">
-                        <h2 className="font-serif text-3xl p-0">Education</h2>
+                        <h2 className="font-serif text-3xl p-0">{text.education}</h2>
                         <hr className="mb-1"/>
                         {
                             information.education.map(
@@ -45,7 +45,7 @@ export default
                         }
                     </div>
                     <div className="mt-2">
-                        <h2 className="font-serif text-3xl p-0">Work experience</h2>
+                        <h2 className="font-serif text-3xl p-0">{text.experience}</h2>
                         <hr className="mb-1"/>
                         {
                             information.experience.map(
@@ -62,7 +62,7 @@ export default
                         }
                     </div>
                     <div className="mt-2">
-                        <h2 className="font-serif text-3xl p-0">Skills</h2>
+                        <h2 className="font-serif text-3xl p-0">{text.skills}</h2>
                         <hr className="mb-1"/>
                         <ul className="grid grid-flow-row grid-cols-3 pl-3">
                             {
@@ -74,7 +74,7 @@ export default
                         </ul>
                     </div>
                     <div className="mt-2">
-                        <h2 className="font-serif text-3xl p-0">Language</h2>
+                        <h2 className="font-serif text-3xl p-0">{text.languages}</h2>
                         <hr className="mb-1"/>
                         <ul className="grid grid-flow-row grid-cols-3 pl-3">
                             {
@@ -95,17 +95,17 @@ export default
             <div className="design-preview bg-white">
                 <div className="h-full bg-default-primary w-2/6"></div>
             </div>,
-        content(information){
+        content(information, text){
             return(
                 <div className="flex w-full h-full">
                     <aside className="w-1/3 bg-default-primary h-full pt-20 p-8 text-white print:bg-default-primary print-bg">
                         <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-48 mx-auto"/>
                         <section className="mt-3">
-                            <h1 className="text-xl">ABOUT ME</h1>
+                            <h1 className="text-xl">{text.about.toUpperCase()}</h1>
                             <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
                         </section>
                         <section className="mt-3">
-                            <h1 className="text-xl font-bold">SOCIAL LINKS</h1>
+                            <h1 className="text-xl font-bold">{text.social.toUpperCase()}</h1>
                             {
                                 information.personalInfo.social.map((item) => 
                                     <>
@@ -116,7 +116,7 @@ export default
                             }
                         </section>
                         <section className="mt-3">
-                            <h1 className="text-xl font-bold">LANGUAGES</h1>
+                            <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                             {
                                 information.languages.map((item) => 
                                     <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
@@ -139,7 +139,7 @@ export default
                         </section>
                         <hr className="mb-3"/>
                         <section>
-                            <h2 className="text-xl">WORK EXPERIENCE</h2>
+                            <h2 className="text-xl">{text.experience.toUpperCase()}</h2>
                             {
                                 information.experience.map(
                                     (item) => 
@@ -159,7 +159,7 @@ export default
                         </section>
                         <hr className="my-3"/>
                         <section>
-                            <h2 className="text-xl">SKILLS</h2>
+                            <h2 className="text-xl">{text.skills.toUpperCase()}</h2>
                             <ul className="grid grid-flow-row grid-cols-3 pl-3">
                                 {
                                     information.skills.map(
@@ -171,7 +171,7 @@ export default
                         </section>
                         <hr className="my-3"/>
                         <section>
-                            <h2 className="text-xl">EDUCATION</h2>
+                            <h2 className="text-xl">{text.education.toUpperCase()}</h2>
                             {
                                 information.education.map(
                                     (item) => 
@@ -199,7 +199,7 @@ export default
                     <div className="bg-default-secondary w-2/6"></div>
                 </div>
             </div>,
-        content(information){
+        content(information, text){
             return(
                 <div className="w-full h-full grid grid-rows-[168px,auto]">
                     <header className="flex bg-default-primary print-bg text-white items-center">
@@ -214,13 +214,13 @@ export default
                     <div className="flex">
                         <aside className="w-1/3 bg-default-secondary p-8 print-bg">
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold p-1">CONTACT</h1>
+                                <h1 className="text-xl font-bold p-1">{text.contact.toUpperCase()}</h1>
                                 <p className="flex gap-1 mb-1 text-sm"><img src={EmailIcon} alt="E-mail icon" className="size-4"/> {information.personalInfo.email}</p>
                                 <p className="flex gap-1 mb-1 text-sm"><img src={LocationIcon} alt="Location icon" className="size-4"/> {information.personalInfo.city}</p>
                                 <p className="flex gap-1 mb-1 text-sm"><img src={PhoneIcon} alt="Phone icon" className="size-4"/>{information.personalInfo.phone}</p>
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">SOCIAL LINKS</h1>
+                                <h1 className="text-xl font-bold">{text.social.toUpperCase()}</h1>
                                 {
                                     information.personalInfo.social.map((item) => 
                                         <>
@@ -231,7 +231,7 @@ export default
                                 }
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">SKILLS</h1>
+                                <h1 className="text-xl font-bold">{text.skills.toUpperCase()}</h1>
                                 <ul>
                                     {
                                         information.skills.map(
@@ -242,7 +242,7 @@ export default
                                 </ul>
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
@@ -252,12 +252,12 @@ export default
                         </aside>
                         <main className="p-8 w-2/3 text-default-primary">
                             <section>
-                                <h2 className="text-xl">ABOUT ME</h2>
+                                <h2 className="text-xl">{text.about.toUpperCase()}</h2>
                                 <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
                             </section>
                             <hr className="my-3"/>
                             <section>
-                                <h2 className="text-xl">WORK EXPERIENCE</h2>
+                                <h2 className="text-xl">{text.experience.toUpperCase()}</h2>
                                 {
                                     information.experience.map(
                                         (item) => 
@@ -277,7 +277,7 @@ export default
                             </section>
                             <hr className="my-3"/>
                             <section>
-                                <h2 className="text-xl">EDUCATION</h2>
+                                <h2 className="text-xl">{text.education.toUpperCase()}</h2>
                                 {
                                     information.education.map(
                                         (item) => 
@@ -304,7 +304,7 @@ export default
                 <div className="bg-default-primary w-2/6 h-full"></div>
                 <div className="bg-default-secondary h-2 absolute top-6 w-full"></div>
             </div>,
-        content(information){
+        content(information, text){
             return(
                 <div className="w-full h-full grid grid-rows-[168px,60px,auto]">
                     <header className="flex items-center">
@@ -328,7 +328,7 @@ export default
                     <div className="flex">
                         <aside className="w-1/3 bg-default-primary text-white p-8 print-bg">                            
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">SOCIAL LINKS</h1>
+                                <h1 className="text-xl font-bold">{text.social.toUpperCase()}</h1>
                                 {
                                     information.personalInfo.social.map((item) => 
                                         <>
@@ -339,7 +339,7 @@ export default
                                 }
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">SKILLS</h1>
+                                <h1 className="text-xl font-bold">{text.skills.toUpperCase()}</h1>
                                 <ul>
                                     {
                                         information.skills.map(
@@ -350,7 +350,7 @@ export default
                                 </ul>
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
@@ -358,7 +358,7 @@ export default
                                 }
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">EDUCATION</h1>
+                                <h1 className="text-xl font-bold">{text.education.toUpperCase()}</h1>
                                 {
                                     information.education.map(
                                         (item) => 
@@ -375,12 +375,12 @@ export default
                         </aside>
                         <main className="p-8 w-2/3 text-default-primary">
                             <section>
-                                <h2 className="text-xl">ABOUT ME</h2>
+                                <h2 className="text-xl">{text.about.toUpperCase()}</h2>
                                 <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
                             </section>
                             <hr className="my-3"/>
                             <section>
-                                <h2 className="text-xl">WORK EXPERIENCE</h2>
+                                <h2 className="text-xl">{text.experience.toUpperCase()}</h2>
                                 {
                                     information.experience.map(
                                         (item) => 
@@ -411,7 +411,7 @@ export default
                 <div className="bg-default-primary w-2/6 h-5"></div>
                 <div className="bg-default-primary w-2/3 h-5 absolute right-0 bottom-0"></div>
             </div>,
-        content(information){
+        content(information, text){
             return(
                 <div className="flex w-full h-full">
                     <aside className="w-1/3 h-full">
@@ -426,12 +426,12 @@ export default
                             </section>
                             <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-48 mx-auto"/>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">CONTACT</h1>
-                                <h2 className="font-bold text-base p-0 mt-1">E-mail:</h2>
+                                <h1 className="text-xl font-bold">{text.contact.toUpperCase()}</h1>
+                                <h2 className="font-bold text-base p-0 mt-1">{text.email}:</h2>
                                 <p className="text-sm">{information.personalInfo.email}</p>
-                                <h2 className="font-bold text-base p-0 mt-1">Address:</h2>
+                                <h2 className="font-bold text-base p-0 mt-1">{text.city}:</h2>
                                 <p className="text-sm">{information.personalInfo.city}</p>
-                                <h2 className="font-bold text-base p-0 mt-1">Phone:</h2>
+                                <h2 className="font-bold text-base p-0 mt-1">{text.phone}:</h2>
                                 <p className="text-sm">{information.personalInfo.phone}</p>
                                 {
                                     information.personalInfo.social.map((item) => 
@@ -443,7 +443,7 @@ export default
                                 }
                             </section>
                             <section className="mt-3">
-                                <h1 className="text-xl font-bold">LANGUAGES</h1>
+                                <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
@@ -454,12 +454,12 @@ export default
                     </aside>
                     <main className="p-8 pt-20 w-2/3 text-default-primary relative">
                         <section className="mb-3">
-                            <h2 className="text-xl">ABOUT ME</h2>
+                            <h2 className="text-xl">{text.about.toUpperCase()}</h2>
                             <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
                         </section>
                         <hr className="mb-3"/>
                         <section>
-                            <h2 className="text-xl">WORK EXPERIENCE</h2>
+                            <h2 className="text-xl">{text.experience.toUpperCase()}</h2>
                             {
                                 information.experience.map(
                                     (item) => 
@@ -479,7 +479,7 @@ export default
                         </section>
                         <hr className="my-3"/>
                         <section>
-                            <h2 className="text-xl">SKILLS</h2>
+                            <h2 className="text-xl">{text.skills.toUpperCase()}</h2>
                             <ul className="grid grid-flow-row grid-cols-3 pl-3">
                                 {
                                     information.skills.map(
@@ -491,7 +491,7 @@ export default
                         </section>
                         <hr className="my-3"/>
                         <section>
-                            <h2 className="text-xl">EDUCATION</h2>
+                            <h2 className="text-xl">{text.education.toUpperCase()}</h2>
                             {
                                 information.education.map(
                                     (item) => 

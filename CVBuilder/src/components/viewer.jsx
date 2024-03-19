@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 
 const zoomsAvailable = [50, 75, 90, 100, 105, 125]
 
-export default function Viewer({information, design}){
+export default function Viewer({information, design, text}){
     
   const [zoom, setZoom] = useState(100);
   const zoomInButton = useRef(null);
@@ -56,15 +56,15 @@ export default function Viewer({information, design}){
               <img src={printIcon} alt="Print icon" className="size-8"/>
             </button>
           </span>
-          <Previewer zoom={zoom} information={information} design={design}></Previewer>
+          <Previewer zoom={zoom} information={information} design={design} text={text}></Previewer>
         </section>
     )
 }
 
-function Previewer({zoom, information, design}){
+function Previewer({zoom, information, design, text}){
   return(
     <article className={(zoom == 50) ? "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:0.5]" : (zoom == 75) ? "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:0.75]" : (zoom == 90) ? "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:0.9]" : (zoom == 105) ? "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:1.05]" : (zoom == 125) ? "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:1.25]" : "bg-white aspect-a4 my-8 mx-auto w-[210mm] [zoom:0.2] mobile-s:[zoom:0.35] mobile-m:[zoom:0.42] mobile-l:[zoom:0.5] tablet:[zoom:0.6] laptop:[zoom:0.75] print:block print:m-0 print:[zoom:1] laptop-l:[zoom:1]"}>
-      {design.content(information)}
+      {design.content(information, text)}
     </article>
   )
 }
