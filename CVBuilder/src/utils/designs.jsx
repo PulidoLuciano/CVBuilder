@@ -98,7 +98,9 @@ export default
                             {
                                 information.languages.map(
                                     (item) => 
+                                    (item.name != "") ?
                                     <li className="list-item list-disc">{item.name} - {item.level}</li>
+                                    : null
                                 )
                             }
                         </ul>
@@ -143,7 +145,9 @@ export default
                             <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                             {
                                 information.languages.map((item) => 
+                                    (item.name != "") ?
                                     <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                    : null
                                 )
                             }
                         </section>
@@ -279,7 +283,9 @@ export default
                                 <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
+                                        (item != "") ?
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                        : null
                                     )
                                 }
                             </section>
@@ -395,7 +401,9 @@ export default
                                 <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
+                                        (item != "") ?
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                        : null
                                     )
                                 }
                             </section>
@@ -494,7 +502,9 @@ export default
                                 <h1 className="text-xl font-bold">{text.languages.toUpperCase()}</h1>
                                 {
                                     information.languages.map((item) => 
+                                        (item.name != "") ?
                                         <p className="text-sm mt-1"><span className="font-bold p-0 mt-1">{item.name}</span> - {item.level}</p>
+                                        : null
                                     )
                                 }
                             </section>
