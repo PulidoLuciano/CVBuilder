@@ -13,5 +13,10 @@ export default
     "city": "City",
     "phone": "Phone",
     "email": "E-mail",
-    "personal": "Personal Information"
+    "personal": "Personal Information",
+    "name": "First name",
+    "surname": "Last name",
+    "position": "Position",
+    "photo": "Photo",
+    "showPhoto": "Display photo"
 }
