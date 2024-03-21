@@ -35,13 +35,19 @@ export default
         {
             name: "Spanish",
             level: "B2"
+        },
+        {
+            name:"Portuguese",
+            level: "A2"
         }
     ],
     skills: [
         "JavaScript",
         "React",
         "Tailwind",
-        "AWS"
+        "AWS",
+        "SQL",
+        "Mongo-DB"
     ],
     experience:[
         {
