@@ -28,5 +28,19 @@ export default
     "finalDate": "Final date",
     "job": "Job",
     "company": "Company",
-    "level": "Level"
+    "level": "Level",
+    "summary": "Summary",
+    "January": "Jan",
+    "February": "Feb",
+    "March": "Mar",
+    "April": "Apr",
+    "May": "May",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Aug",
+    "September": "Sep",
+    "October": "Oct",
+    "November": "Nov",
+    "December": "Dec",
+    "current": "Current"
 }

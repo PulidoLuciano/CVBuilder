@@ -28,5 +28,19 @@ export default
     "finalDate": "Fecha finalización",
     "job": "Trabajo",
     "company": "Empresa",
-    "level": "Nivel"
+    "level": "Nivel",
+    "summary": "Resumen",
+    "January": "Ene",
+    "February": "Feb",
+    "March": "Mar",
+    "April": "Abr",
+    "May": "May",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Ago",
+    "September": "Sep",
+    "October": "Oct",
+    "November": "Nov",
+    "December": "Dic",
+    "current": "Actual"
 }
