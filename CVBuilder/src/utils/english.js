@@ -18,5 +18,15 @@ export default
     "surname": "Last name",
     "position": "Position",
     "photo": "Photo",
-    "showPhoto": "Display photo"
+    "showPhoto": "Display photo",
+    "network": "Social Network",
+    "socialName": "Name",
+    "link": "Link",
+    "institution": "Institution",
+    "degree": "Degree",
+    "initialDate": "Initial date",
+    "finalDate": "Final date",
+    "job": "Job",
+    "company": "Company",
+    "level": "Level"
 }

@@ -18,5 +18,15 @@ export default
     "surname": "Apellido",
     "position": "Posición",
     "photo": "Foto",
-    "showPhoto": "Mostrar foto"
+    "showPhoto": "Mostrar foto",
+    "network": "Red social",
+    "socialName": "Nombre",
+    "link": "Link",
+    "institution": "Institución",
+    "degree": "Título",
+    "initialDate": "Fecha inicio",
+    "finalDate": "Fecha finalización",
+    "job": "Trabajo",
+    "company": "Empresa",
+    "level": "Nivel"
 }
