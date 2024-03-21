@@ -83,7 +83,10 @@ export default
                             {
                                 information.skills.map(
                                     (item) => 
+                                    (item) ?
                                     <li className="list-item list-disc">{item}</li>
+                                    :
+                                    null
                                 )
                             }
                         </ul>
@@ -185,7 +188,9 @@ export default
                                 {
                                     information.skills.map(
                                         (item) => 
+                                        (item) ?
                                         <li className="list-item list-disc">{item}</li>
+                                        : null
                                     )
                                 }
                             </ul>
@@ -263,7 +268,9 @@ export default
                                     {
                                         information.skills.map(
                                             (item) => 
+                                            (item) ?
                                             <li className="text-sm">{item}</li>
+                                            : null
                                         )
                                     }
                                 </ul>
@@ -377,7 +384,9 @@ export default
                                     {
                                         information.skills.map(
                                             (item) => 
+                                            (item) ?
                                             <li className="text-sm">{item}</li>
+                                            : null
                                         )
                                     }
                                 </ul>
@@ -523,7 +532,9 @@ export default
                                 {
                                     information.skills.map(
                                         (item) => 
+                                        (item) ?
                                         <li className="list-item list-disc">{item}</li>
+                                        : null
                                     )
                                 }
                             </ul>
