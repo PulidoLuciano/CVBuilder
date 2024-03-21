@@ -24,6 +24,11 @@
         @apply text-4xl font-bold pb-3
     }
 
+    @page{
+        size: A4 portrait;
+        margin: 0;
+    }
+
     @media print{
         @page{
             size: A4 portrait;
