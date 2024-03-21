@@ -1,6 +1,7 @@
 import PhoneIcon from "../assets/phone.svg";
 import LocationIcon from "../assets/location.svg";
 import EmailIcon from "../assets/email.svg";
+import formatDate from "./formatDate";
 
 export default
 [
@@ -40,6 +41,8 @@ export default
                         {
                             information.education.map(
                                 (item) => 
+                                (item.degree.trim() != "")
+                                ?
                                 <div className="flex mb-1">
                                     <p className="w-1/4 font-bold">{item.initialYear}-{item.finalYear}</p>
                                     <div className="w-3/4">
@@ -47,6 +50,8 @@ export default
                                         <p>{item.institution}</p>
                                     </div>
                                 </div>
+                                :
+                                null
                             )
                         }
                     </div>
@@ -56,14 +61,18 @@ export default
                         {
                             information.experience.map(
                                 (item) => 
+                                (item.position.trim() != "")
+                                ?
                                 <div className="flex mb-1">
-                                    <p className="w-1/3 font-bold">{item.initialDate}-{item.finalDate}</p>
+                                    <p className="w-1/3 font-bold">{item.initialDate}-{item.finalDate ?? text.current}</p>
                                     <div className="w-3/4">
                                         <p className="font-bold font-serif">{item.position}</p>
                                         <p>{item.company}</p>
                                         <p className="text-sm">{item.summary}</p>
                                     </div>
                                 </div>
+                                :
+                                null
                             )
                         }
                     </div>
@@ -158,7 +167,7 @@ export default
                                     <div className="flex mb-1">
                                         <div className="w-1/3">
                                             <p className="font-bold">{item.initialDate} -</p>
-                                            <p className="font-bold">{item.finalDate}</p>
+                                            <p className="font-bold">{item.finalDate ?? text.current}</p>
                                         </div>
                                         <div className="w-3/4">
                                             <p className="font-bold">{item.position}</p>
@@ -282,7 +291,7 @@ export default
                                         <div className="flex mb-1">
                                             <div className="w-1/3">
                                                 <p className="font-bold">{item.initialDate} -</p>
-                                                <p className="font-bold">{item.finalDate}</p>
+                                                <p className="font-bold">{item.finalDate ?? text.current}</p>
                                             </div>
                                             <div className="w-3/4">
                                                 <p className="font-bold">{item.position}</p>
@@ -411,7 +420,7 @@ export default
                                         <div className="flex mb-1">
                                             <div className="w-1/3">
                                                 <p className="font-bold">{item.initialDate} -</p>
-                                                <p className="font-bold">{item.finalDate}</p>
+                                                <p className="font-bold">{item.finalDate ?? text.current}</p>
                                             </div>
                                             <div className="w-3/4">
                                                 <p className="font-bold">{item.position}</p>
@@ -496,7 +505,7 @@ export default
                                     <div className="flex mb-1">
                                         <div className="w-1/3">
                                             <p className="font-bold">{item.initialDate} -</p>
-                                            <p className="font-bold">{item.finalDate}</p>
+                                            <p className="font-bold">{item.finalDate ?? text.current}</p>
                                         </div>
                                         <div className="w-3/4">
                                             <p className="font-bold">{item.position}</p>
