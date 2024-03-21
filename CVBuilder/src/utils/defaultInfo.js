@@ -1,7 +1,10 @@
 export default 
 {
     personalInfo: {
-        photo: "./john.jpg",
+        photo: {
+            isDisplay: true,
+            src: "./john.jpg"
+        },
         name: "John",
         surname: "Doe",
         position: "System Engineer",

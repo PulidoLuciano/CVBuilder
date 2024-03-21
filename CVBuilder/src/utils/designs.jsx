@@ -11,7 +11,13 @@ export default
             return(
                 <div className="p-8">
                     <div className="flex items-center gap-3">
-                        <img src={information.personalInfo.photo} alt="" className="size-20 rounded-full outline outline-1"/>
+                        {
+                            (information.personalInfo.photo.isDisplay)
+                            ?
+                            <img src={information.personalInfo.photo.src} alt="" className="size-20 rounded-full outline outline-1"/>
+                            :
+                            null
+                        }
                         <div>
                             <h1 className="text-5xl font-bold font-serif">{information.personalInfo.name} {information.personalInfo.surname}</h1>
                             <h3 className="text-2xl text-gray-700 font-serif">{information.personalInfo.position}</h3>
@@ -99,7 +105,13 @@ export default
             return(
                 <div className="flex w-full h-full">
                     <aside className="w-1/3 bg-default-primary h-full pt-20 p-8 text-white print:bg-default-primary print-bg">
-                        <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-48 mx-auto"/>
+                        {
+                            (information.personalInfo.photo.isDisplay)
+                            ?
+                            <img src={information.personalInfo.photo.src} alt="Your photo" className="rounded-full size-48 mx-auto"/>
+                            :
+                            null
+                        }
                         <section className="mt-3">
                             <h1 className="text-xl">{text.about.toUpperCase()}</h1>
                             <p className="text-xs text-pretty">{information.personalInfo.summary}</p>
@@ -202,10 +214,16 @@ export default
         content(information, text){
             return(
                 <div className="w-full h-full grid grid-rows-[168px,auto]">
-                    <header className="flex bg-default-primary print-bg text-white items-center">
-                        <div className="w-1/3 px-8">
-                            <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-32 mx-auto my-5"/>
-                        </div>
+                    <header className="flex bg-default-primary print-bg text-white items-center">  
+                        {
+                            (information.personalInfo.photo.isDisplay)
+                            ?
+                            <div className="w-1/3 px-8">
+                                <img src={information.personalInfo.photo.src} alt="Your photo" className="rounded-full size-32 mx-auto my-5"/>
+                            </div>
+                            :
+                            null
+                        }
                         <div className="w-2/3 px-8">
                             <h1 className="text-4xl font-bold">{information.personalInfo.name} {information.personalInfo.surname}</h1>
                             <h2 className="text-base font-light">{information.personalInfo.position}</h2>
@@ -308,11 +326,17 @@ export default
             return(
                 <div className="w-full h-full grid grid-rows-[168px,60px,auto]">
                     <header className="flex items-center">
-                        <div className="w-1/3 px-8 bg-default-primary print-bg">
-                            <div className="size-32 mx-auto my-5 p-3 border-2 border-white">
-                                <img src={information.personalInfo.photo} alt="Your photo"/>                                
+                        {
+                            (information.personalInfo.photo.isDisplay)
+                            ?
+                            <div className="w-1/3 px-8 bg-default-primary print-bg">
+                                <div className="size-32 mx-auto my-5 p-3 border-2 border-white">
+                                    <img src={information.personalInfo.photo.src} alt="Your photo"/>                                
+                                </div>
                             </div>
-                        </div>
+                            :
+                            null
+                        }
                         <div className="w-2/3 px-8">
                             <h1 className="text-5xl font-bold">{information.personalInfo.name.toUpperCase()} {information.personalInfo.surname.toUpperCase()}</h1>
                             <h2 className="text-2xl font-light">{information.personalInfo.position.toUpperCase()}</h2>
@@ -424,7 +448,13 @@ export default
                                     <h2 className="text-base">{information.personalInfo.position.toUpperCase()}</h2>
                                 </div>
                             </section>
-                            <img src={information.personalInfo.photo} alt="Your photo" className="rounded-full size-48 mx-auto"/>
+                            {
+                                (information.personalInfo.photo.isDisplay)
+                                ?
+                                <img src={information.personalInfo.photo.src} alt="Your photo" className="rounded-full size-48 mx-auto"/>
+                                :
+                                null
+                            }
                             <section className="mt-3">
                                 <h1 className="text-xl font-bold">{text.contact.toUpperCase()}</h1>
                                 <h2 className="font-bold text-base p-0 mt-1">{text.email}:</h2>
