@@ -12,5 +12,6 @@ export default
     "social": "Redes sociales",
     "city": "Ciudad",
     "phone": "Teléfono",
-    "email": "E-mail"
+    "email": "E-mail",
+    "personal": "Información personal"
 }
