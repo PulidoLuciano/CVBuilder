@@ -3,7 +3,7 @@ import designs from "../utils/designs";
 import Designs from "./designs";
 import Information from "./information";
 
-export default function Aside({text, selectedDesign, setDesign}){
+export default function Aside({text, selectedDesign, setDesign, information, setInformation}){
     
     const [sectionShown, setSectionShown] = useState("designs");
 
@@ -19,7 +19,7 @@ export default function Aside({text, selectedDesign, setDesign}){
                 ?
                 <Designs text={text} selectedDesign={selectedDesign} designs={designs} setDesign={setDesign}></Designs>
                 :
-                <Information text={text}></Information>
+                <Information text={text} information={information} setInformation={setInformation}></Information>
             }
         </aside>
     )

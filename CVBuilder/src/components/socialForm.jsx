@@ -2,7 +2,7 @@ export default function SocialForm({text, fieldsQuantity}){
     return(
         <form className="pl-6">
             {
-                new Array(fieldsQuantity).fill(0).map((_, index) => <SocialField text={text} index={`social-${index}`}></SocialField>)
+                new Array(fieldsQuantity).fill(0).map((_, index) => <SocialField text={text} index={`social-${index}`} key={`social-${index}`}></SocialField>)
             }
         </form>
     )

@@ -9,12 +9,12 @@ const sections= [
     "languages"
 ]
 
-export default function Information({text}){
+export default function Information({text, information, setInformation}){
     return(
         <section className="p-3">
             <h2>{text.information}</h2>
             {
-                sections.map((section) => <InformationForm key={section.id} section={section} text={text}>{text[section]}</InformationForm>)
+                sections.map((section) => <InformationForm key={section.id} section={section} text={text} setInformation={setInformation} information={information}>{text[section]}</InformationForm>)
             }
         </section>
     )
