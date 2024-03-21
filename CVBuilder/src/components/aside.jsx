@@ -8,7 +8,7 @@ export default function Aside({text, selectedDesign, setDesign}){
     const [sectionShown, setSectionShown] = useState("designs");
 
     return(
-        <aside className="overflow-auto tablet:w-1/3 dark:text-white print:hidden">
+        <aside className="tablet:overflow-auto tablet:w-1/3 dark:text-white print:hidden">
             <nav className="p-3">
                 <button onClick={() => setSectionShown("designs")} className={`navButton mr-3 ${(sectionShown == "designs") ? "bg-slate-500" : "bg-none"}`}>{text.designs}</button>
                 <button onClick={() => setSectionShown("information")} className={`navButton ${(sectionShown != "designs") ? "bg-slate-500" : "bg-none"}`}>{text.information}</button>
