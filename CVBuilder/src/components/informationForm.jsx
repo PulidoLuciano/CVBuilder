@@ -1,9 +1,19 @@
+import EducationForm from "./educationForm"
+import ExperienceForm from "./experienceForm"
+import LanguageForm from "./languageForm"
 import PersonalForm from "./personalForm"
+import SkillsForm from "./skillsForm"
+import SocialForm from "./socialForm"
 
 export default function InformationForm({section, children, text}){
     
     const Forms= {
-        personal: <PersonalForm text={text}></PersonalForm>
+        personal: <PersonalForm text={text}></PersonalForm>,
+        social: <SocialForm text={text} fieldsQuantity={3}></SocialForm>,
+        education: <EducationForm text={text} fieldsQuantity={2}></EducationForm>,
+        experience: <ExperienceForm text={text} fieldsQuantity={3}></ExperienceForm>,
+        skills: <SkillsForm fieldsQuantity={6}></SkillsForm>,
+        languages: <LanguageForm text={text} fieldsQuantity={3}></LanguageForm>
     }
 
     return(
